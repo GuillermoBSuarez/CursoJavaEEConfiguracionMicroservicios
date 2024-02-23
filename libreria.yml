@@ -4,7 +4,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: root
-    url: jdbc:mysql://localhost:3306/libreria
+    url: jdbc:mysql://${HOST_DB}:${PORT_DB}/libreria
     username: root
   jpa:
     hibernate:
@@ -15,9 +15,9 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8080/realms/UsuariosCursoRealm
+          issuer-uri: http://${HOST_KC}:${PORT_KC}/realms/UsuariosCursoRealm
           jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
 eureka:
   client:
     service-url:
-      default-zone: http://localhost:8761/eureka
+      default-zone: http://${HOST_EUREKA}:${PORT_EUREKA}/eureka
