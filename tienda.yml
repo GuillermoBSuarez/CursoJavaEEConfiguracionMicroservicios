@@ -10,3 +10,5 @@ eureka:
   client:
     service-url:
       default-zone: http://${HOST_EUREKA}:${PORT_EUREKA}/eureka
+  instance:
+    hostname: ${HOST}
